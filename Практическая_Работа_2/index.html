@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задач JavaScript - ZAGA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .task {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            min-height: 20px;
+        }
+        .section-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Решение задач JavaScript</h1>
+
+    <div class="section-title">Разогревочные задачи</div>
+
+    <fieldset class="task">
+        <legend>Задача 1: Площадь прямоугольника</legend>
+        <p>Введите длину и ширину прямоугольника:</p>
+        <input type="number" id="length1" placeholder="Длина">
+        <input type="number" id="width1" placeholder="Ширина">
+        <button id="btn1">Вычислить площадь</button>
+        <p class="result" id="result1">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 2: Периметр квадрата</legend>
+        <p>Введите длину стороны квадрата:</p>
+        <input type="number" id="side2" placeholder="Длина стороны">
+        <button id="btn2">Вычислить периметр</button>
+        <p class="result" id="result2">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 3: Температура по Фаренгейту</legend>
+        <p>Введите температуру в Цельсиях:</p>
+        <input type="number" id="celsius3" placeholder="Градусы Цельсия">
+        <button id="btn3">Конвертировать в Фаренгейты</button>
+        <p class="result" id="result3">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 4: Остаток от деления</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="num4a" placeholder="Делимое">
+        <input type="number" id="num4b" placeholder="Делитель">
+        <button id="btn4">Вычислить остаток</button>
+        <p class="result" id="result4">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 5: Умножение двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="num5a" placeholder="Первое число">
+        <input type="number" id="num5b" placeholder="Второе число">
+        <button id="btn5">Умножить</button>
+        <p class="result" id="result5">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 6: Проверка на четность</legend>
+        <p>Введите число:</p>
+        <input type="number" id="num6" placeholder="Число">
+        <button id="btn6">Проверить</button>
+        <p class="result" id="result6">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 7: Перевод времени</legend>
+        <p>Введите количество часов:</p>
+        <input type="number" id="hours7" placeholder="Часы">
+        <button id="btn7">Перевести в минуты</button>
+        <p class="result" id="result7">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 8: Сравнение двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="num8a" placeholder="Первое число">
+        <input type="number" id="num8b" placeholder="Второе число">
+        <button id="btn8">Сравнить</button>
+        <p class="result" id="result8">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 9: Возраст пользователя</legend>
+        <p>Введите год рождения:</p>
+        <input type="number" id="birthYear9" placeholder="Год рождения">
+        <button id="btn9">Вычислить возраст</button>
+        <p class="result" id="result9">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 10: Простое сложение</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="num10a" placeholder="Первое число">
+        <input type="number" id="num10b" placeholder="Второе число">
+        <button id="btn10">Сложить</button>
+        <p class="result" id="result10">Результат: —</p>
+    </fieldset>
+
+    <div class="section-title">Циклы</div>
+
+    <fieldset class="task">
+        <legend>Задача 1: Вывести числа от 1 до 10</legend>
+        <button id="btnCycle1">Показать числа</button>
+        <p class="result" id="resultCycle1">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 2: Сумма чисел от 1 до N</legend>
+        <p>Введите число N:</p>
+        <input type="number" id="numCycle2" placeholder="Число N">
+        <button id="btnCycle2">Вычислить сумму</button>
+        <p class="result" id="resultCycle2">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 3: Факториал числа</legend>
+        <p>Введите число N:</p>
+        <input type="number" id="numCycle3" placeholder="Число N">
+        <button id="btnCycle3">Вычислить факториал</button>
+        <p class="result" id="resultCycle3">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 4: Вывод четных чисел</legend>
+        <button id="btnCycle4">Показать четные числа от 1 до 20</button>
+        <p class="result" id="resultCycle4">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 5: Таблица умножения на 5</legend>
+        <button id="btnCycle5">Показать таблицу умножения</button>
+        <p class="result" id="resultCycle5">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 6: Сумма чисел кратных 3</legend>
+        <button id="btnCycle6">Вычислить сумму чисел кратных 3 (1-50)</button>
+        <p class="result" id="resultCycle6">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 7: Обратный отсчёт</legend>
+        <button id="btnCycle7">Показать обратный отсчёт (10-1)</button>
+        <p class="result" id="resultCycle7">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 8: Произведение чисел от 1 до N</legend>
+        <p>Введите число N:</p>
+        <input type="number" id="numCycle8" placeholder="Число N">
+        <button id="btnCycle8">Вычислить произведение</button>
+        <p class="result" id="resultCycle8">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 9: Числа, кратные 7</legend>
+        <button id="btnCycle9">Показать числа кратные 7 (1-100)</button>
+        <p class="result" id="resultCycle9">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 10: Печать символов</legend>
+        <p>Введите символ и число N:</p>
+        <input type="text" id="charCycle10" placeholder="Символ" maxlength="1">
+        <input type="number" id="numCycle10" placeholder="Число N">
+        <button id="btnCycle10">Повторить символ</button>
+        <p class="result" id="resultCycle10">Результат: —</p>
+    </fieldset>
+
+    <div class="section-title">Условия</div>
+
+    <fieldset class="task">
+        <legend>Задача 1: Проверка числа на положительность</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numCondition1" placeholder="Число">
+        <button id="btnCondition1">Проверить</button>
+        <p class="result" id="resultCondition1">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 2: Оценка по баллам</legend>
+        <p>Введите количество баллов (0-100):</p>
+        <input type="number" id="scoreCondition2" placeholder="Баллы" min="0" max="100">
+        <button id="btnCondition2">Оценить</button>
+        <p class="result" id="resultCondition2">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 3: Проверка деления на 3</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numCondition3" placeholder="Число">
+        <button id="btnCondition3">Проверить</button>
+        <p class="result" id="resultCondition3">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 4: Четное или нечетное</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numCondition4" placeholder="Число">
+        <button id="btnCondition4">Проверить</button>
+        <p class="result" id="resultCondition4">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 5: Наибольшее из двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="numCondition5a" placeholder="Первое число">
+        <input type="number" id="numCondition5b" placeholder="Второе число">
+        <button id="btnCondition5">Сравнить</button>
+        <p class="result" id="resultCondition5">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 6: Проверка високосного года</legend>
+        <p>Введите год:</p>
+        <input type="number" id="yearCondition6" placeholder="Год">
+        <button id="btnCondition6">Проверить</button>
+        <p class="result" id="resultCondition6">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 7: Проверка температуры</legend>
+        <p>Введите температуру:</p>
+        <input type="number" id="tempCondition7" placeholder="Температура">
+        <button id="btnCondition7">Проверить</button>
+        <p class="result" id="resultCondition7">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 8: Число делится на 5 и 11</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numCondition8" placeholder="Число">
+        <button id="btnCondition8">Проверить</button>
+        <p class="result" id="resultCondition8">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 9: Равны ли числа</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="numCondition9a" placeholder="Первое число">
+        <input type="number" id="numCondition9b" placeholder="Второе число">
+        <button id="btnCondition9">Сравнить</button>
+        <p class="result" id="resultCondition9">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 10: Проверка символа</legend>
+        <p>Введите символ:</p>
+        <input type="text" id="charCondition10" placeholder="Символ" maxlength="1">
+        <button id="btnCondition10">Проверить</button>
+        <p class="result" id="resultCondition10">Результат: —</p>
+    </fieldset>
+
+    <div class="section-title">Функции</div>
+
+    <fieldset class="task">
+        <legend>Задача 1: Сложение двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="numFunction1a" placeholder="Первое число">
+        <input type="number" id="numFunction1b" placeholder="Второе число">
+        <button id="btnFunction1">Сложить</button>
+        <p class="result" id="resultFunction1">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 2: Умножение двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="numFunction2a" placeholder="Первое число">
+        <input type="number" id="numFunction2b" placeholder="Второе число">
+        <button id="btnFunction2">Умножить</button>
+        <p class="result" id="resultFunction2">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 3: Проверка четности числа</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numFunction3" placeholder="Число">
+        <button id="btnFunction3">Проверить</button>
+        <p class="result" id="resultFunction3">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 4: Факториал числа</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numFunction4" placeholder="Число">
+        <button id="btnFunction4">Вычислить факториал</button>
+        <p class="result" id="resultFunction4">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 5: Проверка деления на 3</legend>
+        <p>Введите число:</p>
+        <input type="number" id="numFunction5" placeholder="Число">
+        <button id="btnFunction5">Проверить</button>
+        <p class="result" id="resultFunction5">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 6: Перевод градусов Цельсия в Фаренгейты</legend>
+        <p>Введите температуру в Цельсиях:</p>
+        <input type="number" id="celsiusFunction6" placeholder="Градусы Цельсия">
+        <button id="btnFunction6">Конвертировать</button>
+        <p class="result" id="resultFunction6">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 7: Возведение в степень</legend>
+        <p>Введите число и степень:</p>
+        <input type="number" id="numFunction7" placeholder="Число">
+        <input type="number" id="powerFunction7" placeholder="Степень">
+        <button id="btnFunction7">Возвести в степень</button>
+        <p class="result" id="resultFunction7">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 8: Минимум из двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="numFunction8a" placeholder="Первое число">
+        <input type="number" id="numFunction8b" placeholder="Второе число">
+        <button id="btnFunction8">Найти минимум</button>
+        <p class="result" id="resultFunction8">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 9: Максимум из двух чисел</legend>
+        <p>Введите два числа:</p>
+        <input type="number" id="numFunction9a" placeholder="Первое число">
+        <input type="number" id="numFunction9b" placeholder="Второе число">
+        <button id="btnFunction9">Найти максимум</button>
+        <p class="result" id="resultFunction9">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 10: Проверка возраста</legend>
+        <p>Введите возраст:</p>
+        <input type="number" id="ageFunction10" placeholder="Возраст">
+        <button id="btnFunction10">Проверить</button>
+        <p class="result" id="resultFunction10">Результат: —</p>
+    </fieldset>
+
+    <div class="section-title">Массивы</div>
+
+    <fieldset class="task">
+        <legend>Задача 1: Вывести каждый элемент массива</legend>
+        <p>Исходный массив: [1, 2, 3, 4, 5]</p>
+        <button id="btnArray1">Вывести элементы</button>
+        <p class="result" id="resultArray1">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 2: Найти первый четный элемент массива</legend>
+        <p>Исходный массив: [1, 3, 5, 2, 7, 4, 9]</p>
+        <button id="btnArray2">Найти первый четный</button>
+        <p class="result" id="resultArray2">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 3: Добавить элемент в конец массива</legend>
+        <p>Исходный массив: [1, 2, 3]</p>
+        <input type="number" id="newElementArray3" placeholder="Новый элемент">
+        <button id="btnArray3">Добавить в конец</button>
+        <p class="result" id="resultArray3">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 4: Добавить элемент в начало массива</legend>
+        <p>Исходный массив: [2, 3, 4]</p>
+        <input type="number" id="newElementArray4" placeholder="Новый элемент">
+        <button id="btnArray4">Добавить в начало</button>
+        <p class="result" id="resultArray4">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 5: Удвоить значения всех элементов массива</legend>
+        <p>Исходный массив: [1, 2, 3, 4, 5]</p>
+        <button id="btnArray5">Удвоить элементы</button>
+        <p class="result" id="resultArray5">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 6: Удалить последний элемент массива</legend>
+        <p>Исходный массив: [1, 2, 3, 4, 5]</p>
+        <button id="btnArray6">Удалить последний элемент</button>
+        <p class="result" id="resultArray6">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 7: Удалить первый элемент массива</legend>
+        <p>Исходный ма阵列: [1, 2, 3, 4, 5]</p>
+        <button id="btnArray7">Удалить первый элемент</button>
+        <p class="result" id="resultArray7">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 8: Объединить два массива</legend>
+        <p>Первый массив: [1, 2, 3], Второй массив: [4, 5, 6]</p>
+        <button id="btnArray8">Объединить массивы</button>
+        <p class="result" id="resultArray8">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 9: Удалить элемент из массива по индексу</legend>
+        <p>Исходный массив: [10, 20, 30, 40, 50]</p>
+        <input type="number" id="indexArray9" placeholder="Индекс для удаления" min="0" max="4">
+        <button id="btnArray9">Удалить элемент</button>
+        <p class="result" id="resultArray9">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 10: Извлечь подмассив</legend>
+        <p>Исходный массив: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+        <input type="number" id="startArray10" placeholder="Начальный индекс" min="0" max="9">
+        <input type="number" id="endArray10" placeholder="Конечный индекс" min="1" max="10">
+        <button id="btnArray10">Извлечь подмассив</button>
+        <p class="result" id="resultArray10">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 11: Преобразовать массив в строку</legend>
+        <p>Исходный массив: ['Я', 'изучаю', 'JavaScript']</p>
+        <button id="btnArray11">Преобразовать в строку</button>
+        <p class="result" id="resultArray11">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 12: Преобразовать строку в массив</legend>
+        <p>Исходная строка: "Я изучаю JavaScript"</p>
+        <button id="btnArray12">Преобразовать в массив</button>
+        <p class="result" id="resultArray12">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 13: Сумма всех чисел в массиве</legend>
+        <p>Исходный массив: [1, 2, 3, 4, 5]</p>
+        <button id="btnArray13">Вычислить сумму</button>
+        <p class="result" id="resultArray13">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 14: Увеличить каждое число в массиве на 10</legend>
+        <p>Исходный массив: [5, 10, 15, 20]</p>
+        <button id="btnArray14">Увеличить на 10</button>
+        <p class="result" id="resultArray14">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 15: Найти индекс первого отрицательного числа</legend>
+        <p>Исходный массив: [5, 10, -3, 15, -8, 20]</p>
+        <button id="btnArray15">Найти индекс первого отрицательного</button>
+        <p class="result" id="resultArray15">Результат: —</p>
+    </fieldset>
+
+    <div class="section-title">Объекты</div>
+
+    <fieldset class="task">
+        <legend>Задача 1: Создать объект с именем и возрастом</legend>
+        <button id="btnObject1">Показать объект</button>
+        <p class="result" id="resultObject1">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 2: Добавить новое свойство в объект</legend>
+        <p>Исходный объект: {name: "Иван", age: 25}</p>
+        <input type="text" id="cityObject2" placeholder="Город">
+        <button id="btnObject2">Добавить свойство city</button>
+        <p class="result" id="resultObject2">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 3: Удалить свойство из объекта</legend>
+        <p>Исходный объект: {name: "Иван", age: 25, city: "Москва"}</p>
+        <button id="btnObject3">Удалить свойство age</button>
+        <p class="result" id="resultObject3">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 4: Изменить значение свойства</legend>
+        <p>Исходный объект: {name: "Иван", age: 25}</p>
+        <input type="text" id="newNameObject4" placeholder="Новое имя">
+        <button id="btnObject4">Изменить имя</button>
+        <p class="result" id="resultObject4">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 5: Проверка наличия свойства</legend>
+        <p>Исходный объект: {name: "Иван", age: 25, city: "Москва"}</p>
+        <input type="text" id="propertyObject5" placeholder="Имя свойства">
+        <button id="btnObject5">Проверить наличие</button>
+        <p class="result" id="resultObject5">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 6: Проверка значения свойства</legend>
+        <p>Исходный объект: {name: "Иван", age: 25, city: "Москва"}</p>
+        <input type="text" id="propertyObject6" placeholder="Имя свойства">
+        <button id="btnObject6">Получить значение</button>
+        <p class="result" id="resultObject6">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 7: Сравнение двух объектов</legend>
+        <p>Первый объект: {name: "Иван", age: 25}, Второй объект: {name: "Петр", age: 30}</p>
+        <button id="btnObject7">Сравнить объекты</button>
+        <p class="result" id="resultObject7">Результат: —</p>
+    </fieldset>
+
+    <fieldset class="task">
+        <legend>Задача 8: Итерация по свойствам объекта</legend>
+        <p>Объект: {name: "Иван", age: 25, city: "Москва", occupation: "Разработчик"}</p>
+        <button id="btnObject8">Показать свойства</button>
+        <p class="result" id="resultObject8">Результат: —</p>
+    </fieldset>
+
+    <script>
+        // Разогревочные задачи
+        document.getElementById("btn1").addEventListener("click", () => {
+            const length = parseFloat(document.getElementById("length1").value);
+            const width = parseFloat(document.getElementById("width1").value);
+            const area = length * width;
+            document.getElementById("result1").textContent = `Площадь прямоугольника: ${area}`;
+        });
+
+        document.getElementById("btn2").addEventListener("click", () => {
+            const side = parseFloat(document.getElementById("side2").value);
+            const perimeter = 4 * side;
+            document.getElementById("result2").textContent = `Периметр квадрата: ${perimeter}`;
+        });
+
+        document.getElementById("btn3").addEventListener("click", () => {
+            const celsius = parseFloat(document.getElementById("celsius3").value);
+            const fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("result3").textContent = `Температура по Фаренгейту: ${fahrenheit}`;
+        });
+
+        document.getElementById("btn4").addEventListener("click", () => {
+            const numA = parseFloat(document.getElementById("num4a").value);
+            const numB = parseFloat(document.getElementById("num4b").value);
+            const remainder = numA % numB;
+            document.getElementById("result4").textContent = `Остаток от деления: ${remainder}`;
+        });
+
+        document.getElementById("btn5").addEventListener("click", () => {
+            const numA = parseFloat(document.getElementById("num5a").value);
+            const numB = parseFloat(document.getElementById("num5b").value);
+            const product = numA * numB;
+            document.getElementById("result5").textContent = `Произведение: ${product}`;
+        });
+
+        document.getElementById("btn6").addEventListener("click", () => {
+            const num = parseFloat(document.getElementById("num6").value);
+            const isEven = num % 2 === 0;
+            document.getElementById("result6").textContent = `Число ${num} является ${isEven ? "четным" : "нечетным"}`;
+        });
+
+        document.getElementById("btn7").addEventListener("click", () => {
+            const hours = parseFloat(document.getElementById("hours7").value);
+            const minutes = hours * 60;
+            document.getElementById("result7").textContent = `${hours} часов = ${minutes} минут`;
+        });
+
+        document.getElementById("btn8").addEventListener("click", () => {
+            const numA = parseFloat(document.getElementById("num8a").value);
+            const numB = parseFloat(document.getElementById("num8b").value);
+            let result;
+            if (numA > numB) {
+                result = `Первое число (${numA}) больше второго (${numB})`;
+            } else if (numB > numA) {
+                result = `Второе число (${numB}) больше первого (${numA})`;
+            } else {
+                result = `Числа равны (${numA})`;
+            }
+            document.getElementById("result8").textContent = result;
+        });
+
+        document.getElementById("btn9").addEventListener("click", () => {
+            const birthYear = parseInt(document.getElementById("birthYear9").value);
+            const currentYear = new Date().getFullYear();
+            const age = currentYear - birthYear;
+            document.getElementById("result9").textContent = `Возраст: ${age} лет`;
+        });
+
+        document.getElementById("btn10").addEventListener("click", () => {
+            const numA = parseFloat(document.getElementById("num10a").value);
+            const numB = parseFloat(document.getElementById("num10b").value);
+            const sum = numA + numB;
+            document.getElementById("result10").textContent = `Сумма: ${sum}`;
+        });
+
+        // Циклы
+        document.getElementById("btnCycle1").addEventListener("click", () => {
+            let result = "";
+            for (let i = 1; i <= 10; i++) {
+                result += i + " ";
+            }
+            document.getElementById("resultCycle1").textContent = result;
+        });
+
+        document.getElementById("btnCycle2").addEventListener("click", () => {
+            const n = parseInt(document.getElementById("numCycle2").value);
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum += i;
+            }
+            document.getElementById("resultCycle2").textContent = `Сумма чисел от 1 до ${n}: ${sum}`;
+        });
+
+        document.getElementById("btnCycle3").addEventListener("click", () => {
+            const n = parseInt(document.getElementById("numCycle3").value);
+            let factorial = 1;
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            document.getElementById("resultCycle3").textContent = `Факториал ${n}! = ${factorial}`;
+        });
+
+        document.getElementById("btnCycle4").addEventListener("click", () => {
+            let result = "";
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 === 0) {
+                    result += i + " ";
+                }
+            }
+            document.getElementById("resultCycle4").textContent = result;
+        });
+
+        document.getElementById("btnCycle5").addEventListener("click", () => {
+            let result = "";
+            for (let i = 1; i <= 10; i++) {
+                result += `5 × ${i} = ${5 * i}<br>`;
+            }
+            document.getElementById("resultCycle5").innerHTML = result;
+        });
+
+        document.getElementById("btnCycle6").addEventListener("click", () => {
+            let sum = 0;
+            for (let i = 1; i <= 50; i++) {
+                if (i % 3 === 0) {
+                    sum += i;
+                }
+            }
+            document.getElementById("resultCycle6").textContent = `Сумма чисел кратных 3 от 1 до 50: ${sum}`;
+        });
+
+        document.getElementById("btnCycle7").addEventListener("click", () => {
+            let result = "";
+            for (let i = 10; i >= 1; i--) {
+                result += i + " ";
+            }
+            document.getElementById("resultCycle7").textContent = result;
+        });
+
+        document.getElementById("btnCycle8").addEventListener("click", () => {
+            const n = parseInt(document.getElementById("numCycle8").value);
+            let product = 1;
+            for (let i = 1; i <= n; i++) {
+                product *= i;
+            }
+            document.getElementById("resultCycle8").textContent = `Произведение чисел от 1 до ${n}: ${product}`;
+        });
+
+        document.getElementById("btnCycle9").addEventListener("click", () => {
+            let result = "";
+            for (let i = 1; i <= 100; i++) {
+                if (i % 7 === 0) {
+                    result += i + " ";
+                }
+            }
+            document.getElementById("resultCycle9").textContent = result;
+        });
+
+        document.getElementById("btnCycle10").addEventListener("click", () => {
+            const char = document.getElementById("charCycle10").value;
+            const n = parseInt(document.getElementById("numCycle10").value);
+            let result = "";
+            for (let i = 0; i < n; i++) {
+                result += char;
+            }
+            document.getElementById("resultCycle10").textContent = result;
+        });
+
+        // Условия
+        document.getElementById("btnCondition1").addEventListener("click", () => {
+            const num = parseFloat(document.getElementById("numCondition1").value);
+            let result;
+            if (num > 0) {
+                result = "Положительное";
+            } else if (num < 0) {
+                result = "Отрицательное";
+            } else {
+                result = "Ноль";
+            }
+            document.getElementById("resultCondition1").textContent = result;
+        });
+
+        document.getElementById("btnCondition2").addEventListener("click", () => {
+            const score = parseInt(document.getElementById("scoreCondition2").value);
+            let grade;
+            if (score >= 90) {
+                grade = "Отлично";
+            } else if (score >= 70) {
+                grade = "Хорошо";
+            } else if (score >= 50) {
+                grade = "Удовлетворительно";
+            } else {
+                grade = "Неудовлетворительно";
+            }
+            document.getElementById("resultCondition2").textContent = `Оценка: ${grade}`;
+        });
+
+        document.getElementById("btnCondition3").addEventListener("click", () => {
+            const num = parseInt(document.getElementById("numCondition3").value);
+            const isDivisible = num % 3 === 0;
+            document.getElementById("resultCondition3").textContent = isDivisible ? "Кратно 3" : "Не кратно 3";
+        });
+
+        document.getElementById("btnCondition4").addEventListener("click", () => {
+            const num = parseInt(document.getElementById("numCondition4").value);
+            const isEven = num % 2 === 0;
+            document.getElementById("resultCondition4").textContent = isEven ? "Четное" : "Нечетное";
+        });
+
+        document.getElementById("btnCondition5").addEventListener("click", () => {
+            const numA = parseFloat(document.getElementById("numCondition5a").value);
+            const numB = parseFloat(document.getElementById("numCondition5b").value);
+            const max = Math.max(numA, numB);
+            document.getElementById("resultCondition5").textContent = `Наибольшее число: ${max}`;
+        });
+
+        document.getElementById("btnCondition6").addEventListener("click", () => {
+            const year = parseInt(document.getElementById("yearCondition6").value);
+            const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            document.getElementById("resultCondition6").textContent = isLeap ? "Високосный год" : "Не високосный год";
+        });
+
+        document.getElementById("btnCondition7").addEventListener("click", () => {
+            const temp = parseFloat(document.getElementById("tempCondition7").value);
+            document.getElementById("resultCondition7").textContent = temp < 10 ? "Нужно надеть куртку" : "Куртка не нужна";
+        });
+
+        document.getElementById("btnCondition8").addEventListener("click", () => {
+            const num = parseInt(document.getElementById("numCondition8").value);
+            const isDivisible = num % 5 === 0 && num % 11 === 0;
+            document.getElementById("resultCondition8").textContent = isDivisible ? "Делится на 5 и 11" : "Не делится на 5 и 11";
+        });
+
+        document.getElementById("btnCondition9").addEventListener("click", () => {
+            const numA = parseFloat(document.getElementById("numCondition9a").value);
+            const numB = parseFloat(document.getElementById("numCondition9b").value);
+            document.getElementById("resultCondition9").textContent = numA === numB ? "Числа равны" : "Числа не равны";
+        });
+
+        document.getElementById("btnCondition10").addEventListener("click", () => {
+            const char = document.getElementById("charCondition10").value;
+            const isLetter = /[a-zA-Zа-яА-Я]/.test(char);
+            document.getElementById("resultCondition10").textContent = isLetter ? "Это буква" : "Это не буква";
+        });
+
+        // Функции
+        function add(a, b) { return a + b; }
+        function multiply(a, b) { return a * b; }
+        function isEven(num) { return num % 2 === 0; }
+        function factorial(n) {
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        function isDivisibleBy3(num) { return num % 3 === 0; }
+        function celsiusToFahrenheit(celsius) { return (celsius * 9/5) + 32; }
+        function power(base, exponent) { return Math.pow(base, exponent); }
+        function min(a, b) { return a < b ? a : b; }
+        function max(a, b) { return a > b ? a : b; }
+        function checkAge(age) { return age >= 18 ? "Совершеннолетний" : "Несовершеннолетний"; }
+
+        document.getElementById("btnFunction1").addEventListener("click", () => {
+            const a = parseFloat(document.getElementById("numFunction1a").value);
+            const b = parseFloat(document.getElementById("numFunction1b").value);
+            document.getElementById("resultFunction1").textContent = `Результат: ${add(a, b)}`;
+        });
+
+        document.getElementById("btnFunction2").addEventListener("click", () => {
+            const a = parseFloat(document.getElementById("numFunction2a").value);
+            const b = parseFloat(document.getElementById("numFunction2b").value);
+            document.getElementById("resultFunction2").textContent = `Результат: ${multiply(a, b)}`;
+        });
+
+        document.getElementById("btnFunction3").addEventListener("click", () => {
+            const num = parseFloat(document.getElementById("numFunction3").value);
+            document.getElementById("resultFunction3").textContent = `Результат: ${isEven(num)}`;
+        });
+
+        document.getElementById("btnFunction4").addEventListener("click", () => {
+            const num = parseInt(document.getElementById("numFunction4").value);
+            document.getElementById("resultFunction4").textContent = `Результат: ${factorial(num)}`;
+        });
+
+        document.getElementById("btnFunction5").addEventListener("click", () => {
+            const num = parseInt(document.getElementById("numFunction5").value);
+            document.getElementById("resultFunction5").textContent = `Результат: ${isDivisibleBy3(num)}`;
+        });
+
+        document.getElementById("btnFunction6").addEventListener("click", () => {
+            const celsius = parseFloat(document.getElementById("celsiusFunction6").value);
+            document.getElementById("resultFunction6").textContent = `Результат: ${celsiusToFahrenheit(celsius)}`;
+        });
+
+        document.getElementById("btnFunction7").addEventListener("click", () => {
+            const base = parseFloat(document.getElementById("numFunction7").value);
+            const exponent = parseFloat(document.getElementById("powerFunction7").value);
+            document.getElementById("resultFunction7").textContent = `Результат: ${power(base, exponent)}`;
+        });
+
+        document.getElementById("btnFunction8").addEventListener("click", () => {
+            const a = parseFloat(document.getElementById("numFunction8a").value);
+            const b = parseFloat(document.getElementById("numFunction8b").value);
+            document.getElementById("resultFunction8").textContent = `Результат: ${min(a, b)}`;
+        });
+
+        document.getElementById("btnFunction9").addEventListener("click", () => {
+            const a = parseFloat(document.getElementById("numFunction9a").value);
+            const b = parseFloat(document.getElementById("numFunction9b").value);
+            document.getElementById("resultFunction9").textContent = `Результат: ${max(a, b)}`;
+        });
+
+        document.getElementById("btnFunction10").addEventListener("click", () => {
+            const age = parseInt(document.getElementById("ageFunction10").value);
+            document.getElementById("resultFunction10").textContent = `Результат: ${checkAge(age)}`;
+        });
+
+        // Массивы
+        document.getElementById("btnArray1").addEventListener("click", () => {
+            const arr = [1, 2, 3, 4, 5];
+            let result = "";
+            arr.forEach(item => {
+                result += item + " ";
+            });
+            document.getElementById("resultArray1").textContent = result;
+        });
+
+        document.getElementById("btnArray2").addEventListener("click", () => {
+            const arr = [1, 3, 5, 2, 7, 4, 9];
+            const firstEven = arr.find(item => item % 2 === 0);
+            document.getElementById("resultArray2").textContent = `Первый четный элемент: ${firstEven}`;
+        });
+
+        document.getElementById("btnArray3").addEventListener("click", () => {
+            const arr = [1, 2, 3];
+            const newElement = parseInt(document.getElementById("newElementArray3").value);
+            arr.push(newElement);
+            document.getElementById("resultArray3").textContent = `Новый массив: [${arr.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray4").addEventListener("click", () => {
+            const arr = [2, 3, 4];
+            const newElement = parseInt(document.getElementById("newElementArray4").value);
+            arr.unshift(newElement);
+            document.getElementById("resultArray4").textContent = `Новый массив: [${arr.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray5").addEventListener("click", () => {
+            const arr = [1, 2, 3, 4, 5];
+            const doubled = arr.map(item => item * 2);
+            document.getElementById("resultArray5").textContent = `Удвоенный массив: [${doubled.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray6").addEventListener("click", () => {
+            const arr = [1, 2, 3, 4, 5];
+            arr.pop();
+            document.getElementById("resultArray6").textContent = `Массив после удаления: [${arr.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray7").addEventListener("click", () => {
+            const arr = [1, 2, 3, 4, 5];
+            arr.shift();
+            document.getElementById("resultArray7").textContent = `Массив после удаления: [${arr.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray8").addEventListener("click", () => {
+            const arr1 = [1, 2, 3];
+            const arr2 = [4, 5, 6];
+            const combined = arr1.concat(arr2);
+            document.getElementById("resultArray8").textContent = `Объединенный массив: [${combined.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray9").addEventListener("click", () => {
+            const arr = [10, 20, 30, 40, 50];
+            const index = parseInt(document.getElementById("indexArray9").value);
+            arr.splice(index, 1);
+            document.getElementById("resultArray9").textContent = `Массив после удаления: [${arr.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray10").addEventListener("click", () => {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const start = parseInt(document.getElementById("startArray10").value);
+            const end = parseInt(document.getElementById("endArray10").value);
+            const subArray = arr.slice(start, end);
+            document.getElementById("resultArray10").textContent = `Подмассив: [${subArray.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray11").addEventListener("click", () => {
+            const arr = ['Я', 'изучаю', 'JavaScript'];
+            const str = arr.join(' ');
+            document.getElementById("resultArray11").textContent = `Строка: "${str}"`;
+        });
+
+        document.getElementById("btnArray12").addEventListener("click", () => {
+            const str = "Я изучаю JavaScript";
+            const arr = str.split(' ');
+            document.getElementById("resultArray12").textContent = `Массив: [${arr.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray13").addEventListener("click", () => {
+            const arr = [1, 2, 3, 4, 5];
+            let sum = 0;
+            arr.forEach(item => {
+                sum += item;
+            });
+            document.getElementById("resultArray13").textContent = `Сумма элементов: ${sum}`;
+        });
+
+        document.getElementById("btnArray14").addEventListener("click", () => {
+            const arr = [5, 10, 15, 20];
+            const increased = arr.map(item => item + 10);
+            document.getElementById("resultArray14").textContent = `Массив +10: [${increased.join(", ")}]`;
+        });
+
+        document.getElementById("btnArray15").addEventListener("click", () => {
+            const arr = [5, 10, -3, 15, -8, 20];
+            const firstNegativeIndex = arr.findIndex(item => item < 0);
+            document.getElementById("resultArray15").textContent = `Индекс первого отрицательного элемента: ${firstNegativeIndex}`;
+        });
+
+        // Объекты
+        document.getElementById("btnObject1").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25
+            };
+            document.getElementById("resultObject1").textContent = `Имя: ${person.name}, Возраст: ${person.age}`;
+        });
+
+        document.getElementById("btnObject2").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25
+            };
+            const city = document.getElementById("cityObject2").value;
+            person.city = city;
+            document.getElementById("resultObject2").textContent = `Объект: ${JSON.stringify(person)}`;
+        });
+
+        document.getElementById("btnObject3").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25,
+                city: "Москва"
+            };
+            delete person.age;
+            document.getElementById("resultObject3").textContent = `Объект после удаления age: ${JSON.stringify(person)}`;
+        });
+
+        document.getElementById("btnObject4").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25
+            };
+            const newName = document.getElementById("newNameObject4").value;
+            person.name = newName;
+            document.getElementById("resultObject4").textContent = `Объект после изменения: ${JSON.stringify(person)}`;
+        });
+
+        document.getElementById("btnObject5").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25,
+                city: "Москва"
+            };
+            const property = document.getElementById("propertyObject5").value;
+            const hasProperty = person.hasOwnProperty(property);
+            document.getElementById("resultObject5").textContent = `Свойство "${property}" ${hasProperty ? "существует" : "не существует"}`;
+        });
+
+        document.getElementById("btnObject6").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25,
+                city: "Москва"
+            };
+            const property = document.getElementById("propertyObject6").value;
+            const value = person[property];
+            document.getElementById("resultObject6").textContent = `Значение свойства "${property}": ${value !== undefined ? value : "не существует"}`;
+        });
+
+        document.getElementById("btnObject7").addEventListener("click", () => {
+            const obj1 = {name: "Иван", age: 25};
+            const obj2 = {name: "Петр", age: 30};
+            const areEqual = JSON.stringify(obj1) === JSON.stringify(obj2);
+            document.getElementById("resultObject7").textContent = `Объекты ${areEqual ? "равны" : "не равны"}`;
+        });
+
+        document.getElementById("btnObject8").addEventListener("click", () => {
+            const person = {
+                name: "Иван",
+                age: 25,
+                city: "Москва",
+                occupation: "Разработчик"
+            };
+            let result = "";
+            for (let key in person) {
+                result += `${key}: ${person[key]}\n`;
+            }
+            document.getElementById("resultObject8").textContent = result;
+        });
+    </script>
+</body>
+</html>
