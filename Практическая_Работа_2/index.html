@@ -443,7 +443,7 @@
 
     <fieldset class="task">
         <legend>Задача 7: Удалить первый элемент массива</legend>
-        <p>Исходный ма阵列: [1, 2, 3, 4, 5]</p>
+        <p>Исходный массив: [1, 2, 3, 4, 5]</p>
         <button id="btnArray7">Удалить первый элемент</button>
         <p class="result" id="resultArray7">Результат: —</p>
     </fieldset>
@@ -517,7 +517,7 @@
 
     <fieldset class="task">
         <legend>Задача 2: Добавить новое свойство в объект</legend>
-        <p>Исходный объект: {name: "Иван", age: 25}</p>
+        <p>Исходный объект: {name: "Zagidin", age: 18}</p>
         <input type="text" id="cityObject2" placeholder="Город">
         <button id="btnObject2">Добавить свойство city</button>
         <p class="result" id="resultObject2">Результат: —</p>
@@ -525,14 +525,14 @@
 
     <fieldset class="task">
         <legend>Задача 3: Удалить свойство из объекта</legend>
-        <p>Исходный объект: {name: "Иван", age: 25, city: "Москва"}</p>
+        <p>Исходный объект: {name: "Zagidin", age: 18, city: "Dagestan"}</p>
         <button id="btnObject3">Удалить свойство age</button>
         <p class="result" id="resultObject3">Результат: —</p>
     </fieldset>
 
     <fieldset class="task">
         <legend>Задача 4: Изменить значение свойства</legend>
-        <p>Исходный объект: {name: "Иван", age: 25}</p>
+        <p>Исходный объект: {name: "Zagidin", age: 18}</p>
         <input type="text" id="newNameObject4" placeholder="Новое имя">
         <button id="btnObject4">Изменить имя</button>
         <p class="result" id="resultObject4">Результат: —</p>
@@ -540,7 +540,7 @@
 
     <fieldset class="task">
         <legend>Задача 5: Проверка наличия свойства</legend>
-        <p>Исходный объект: {name: "Иван", age: 25, city: "Москва"}</p>
+        <p>Исходный объект: {name: "Zagidin", age: 18, city: "Dagestan"}</p>
         <input type="text" id="propertyObject5" placeholder="Имя свойства">
         <button id="btnObject5">Проверить наличие</button>
         <p class="result" id="resultObject5">Результат: —</p>
@@ -548,7 +548,7 @@
 
     <fieldset class="task">
         <legend>Задача 6: Проверка значения свойства</legend>
-        <p>Исходный объект: {name: "Иван", age: 25, city: "Москва"}</p>
+        <p>Исходный объект: {name: "Zagidin", age: 18, city: "Dagestan"}</p>
         <input type="text" id="propertyObject6" placeholder="Имя свойства">
         <button id="btnObject6">Получить значение</button>
         <p class="result" id="resultObject6">Результат: —</p>
@@ -556,14 +556,14 @@
 
     <fieldset class="task">
         <legend>Задача 7: Сравнение двух объектов</legend>
-        <p>Первый объект: {name: "Иван", age: 25}, Второй объект: {name: "Петр", age: 30}</p>
+        <p>Первый объект: {name: "Zagidin", age: 18}, Второй объект: {name: "Islam", age: 21}</p>
         <button id="btnObject7">Сравнить объекты</button>
         <p class="result" id="resultObject7">Результат: —</p>
     </fieldset>
 
     <fieldset class="task">
         <legend>Задача 8: Итерация по свойствам объекта</legend>
-        <p>Объект: {name: "Иван", age: 25, city: "Москва", occupation: "Разработчик"}</p>
+        <p>Объект: {name: "Zagidin", age: 18, city: "Dagestan", occupation: "Python - Разработчик"}</p>
         <button id="btnObject8">Показать свойства</button>
         <p class="result" id="resultObject8">Результат: —</p>
     </fieldset>
@@ -991,16 +991,16 @@
         // Объекты
         document.getElementById("btnObject1").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25
+                name: "Zagidin",
+                age: 18
             };
             document.getElementById("resultObject1").textContent = `Имя: ${person.name}, Возраст: ${person.age}`;
         });
 
         document.getElementById("btnObject2").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25
+                name: "Zagidin",
+                age: 18
             };
             const city = document.getElementById("cityObject2").value;
             person.city = city;
@@ -1009,9 +1009,9 @@
 
         document.getElementById("btnObject3").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25,
-                city: "Москва"
+                name: "Zagidin",
+                age: 18,
+                city: "Dagestan"
             };
             delete person.age;
             document.getElementById("resultObject3").textContent = `Объект после удаления age: ${JSON.stringify(person)}`;
@@ -1019,8 +1019,8 @@
 
         document.getElementById("btnObject4").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25
+                name: "Zagidin",
+                age: 18
             };
             const newName = document.getElementById("newNameObject4").value;
             person.name = newName;
@@ -1029,9 +1029,9 @@
 
         document.getElementById("btnObject5").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25,
-                city: "Москва"
+                name: "Zagidin",
+                age: 18,
+                city: "Dagestan"
             };
             const property = document.getElementById("propertyObject5").value;
             const hasProperty = person.hasOwnProperty(property);
@@ -1040,9 +1040,9 @@
 
         document.getElementById("btnObject6").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25,
-                city: "Москва"
+                name: "Zagidin",
+                age: 18,
+                city: "Dagestan"
             };
             const property = document.getElementById("propertyObject6").value;
             const value = person[property];
@@ -1050,18 +1050,18 @@
         });
 
         document.getElementById("btnObject7").addEventListener("click", () => {
-            const obj1 = {name: "Иван", age: 25};
-            const obj2 = {name: "Петр", age: 30};
+            const obj1 = {name: "Zagidin", age: 18};
+            const obj2 = {name: "Islam", age: 21};
             const areEqual = JSON.stringify(obj1) === JSON.stringify(obj2);
             document.getElementById("resultObject7").textContent = `Объекты ${areEqual ? "равны" : "не равны"}`;
         });
 
         document.getElementById("btnObject8").addEventListener("click", () => {
             const person = {
-                name: "Иван",
-                age: 25,
-                city: "Москва",
-                occupation: "Разработчик"
+                name: "Zagidin",
+                age: 18,
+                city: "Dagestan",
+                occupation: "Python - Разработчик"
             };
             let result = "";
             for (let key in person) {
